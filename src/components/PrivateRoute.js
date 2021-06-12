@@ -4,21 +4,12 @@ import {useAuth0} from "@auth0/auth0-react";
 
 const PrivateRoute = ({children, ...rest}) => {
   const { loginWithRedirect, handleRedirectCallback, isAuthenticated, user} = useAuth0();
-
-  if (!isAuthenticated && !user) {
-    return loginWithRedirect();
+  const login = async () => {
+    await loginWithRedirect();
+    await handleRedirectCallback();
   }
-
-  if (
-    window.location.search.includes('code=') &&
-    window.location.search.includes('state=')
-  ) {
-    try {
-      handleRedirectCallback();
-    } catch (err) {
-      alert(err);
-    }
-    window.location.replace(window.location.pathname);
+  if (!isAuthenticated && !user) {
+    return login();
   }
 
   return (
