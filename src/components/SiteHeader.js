@@ -3,11 +3,7 @@ import {Link} from 'react-router-dom';
 import {useAuth0} from "@auth0/auth0-react";
 
 export default function SiteHeader() {
-  const {loginWithRedirect, handleRedirectCallback, logout, isAuthenticated, user} = useAuth0();
-  const login = () => {
-    loginWithRedirect();
-    handleRedirectCallback();
-  }
+  const {loginWithRedirect, logout, isAuthenticated, user} = useAuth0();
 
   return (
     <div className="site-header">
@@ -19,7 +15,7 @@ export default function SiteHeader() {
 
       {/* stuff on the right */}
       <div>
-        {!isAuthenticated && <button onClick={login}>Login</button>}
+        {!isAuthenticated && <button onClick={loginWithRedirect}>Login</button>}
         {isAuthenticated && (
           <>
             <button>{user.name}</button>
