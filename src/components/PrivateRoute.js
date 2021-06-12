@@ -18,6 +18,7 @@ const PrivateRoute = ({children, ...rest}) => {
     } catch (err) {
       alert(err);
     }
+    window.location.replace(window.location.pathname);
   }
 
   return (
