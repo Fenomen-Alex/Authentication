@@ -4,9 +4,9 @@ import {useAuth0} from "@auth0/auth0-react";
 
 export default function SiteHeader() {
   const {loginWithRedirect, handleRedirectCallback, logout, isAuthenticated, user} = useAuth0();
-  const login = async () => {
-    await loginWithRedirect();
-    await handleRedirectCallback();
+  const login = () => {
+    loginWithRedirect();
+    handleRedirectCallback();
   }
 
   return (
