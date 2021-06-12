@@ -19,7 +19,7 @@ export default function App() {
           <PrivateRoute path="/dashboard">
             <Dashboard />
           </PrivateRoute>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>

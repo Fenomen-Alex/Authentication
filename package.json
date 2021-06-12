@@ -2,7 +2,7 @@
   "name": "finished",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://fenomen-alex.github.io/Authentication",
+  "homepage": "http://fenomen-alex.github.io/Authentication/",
   "dependencies": {
     "@auth0/auth0-react": "^1.5.0",
     "@testing-library/jest-dom": "^4.2.4",
