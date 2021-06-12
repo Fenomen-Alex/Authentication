@@ -4,6 +4,7 @@ import SiteHeader from './components/SiteHeader';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import './App.css';
+import PrivateRoute from "./components/PrivateRoute";
 
 export default function App() {
 
@@ -15,9 +16,9 @@ export default function App() {
 
         {/* routes */}
         <Switch>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard />
-          </Route>
+          </PrivateRoute>
           <Route path="/" exact={true}>
             <Home />
           </Route>
